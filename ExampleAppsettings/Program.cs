@@ -15,8 +15,8 @@ var webAppOptions = new WebApplicationOptions()
 };
 
 var builder = WebApplication.CreateBuilder(webAppOptions);
-
-builder.Configuration.GetSection(ApplicationServicesSettings.MySettings).Bind(ApplicationServicesSettings.MyClassValue);
+builder.Services.Configure<MyClassValue>(builder.Configuration.GetSection(nameof(MyClassValue)));
+//builder.Configuration.GetSection(ApplicationServicesSettings.MySettings).Bind(ApplicationServicesSettings.MyClassValue);
 
 // Add services to the container.
 builder.Services.AddRazorPages();

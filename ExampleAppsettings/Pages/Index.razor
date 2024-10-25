@@ -1,12 +1,14 @@
 ﻿@page "/"
 @using ExampleAppsettings.AppSettings;
+@inject Microsoft.Extensions.Options.IOptions<MyClassValue> appSettings;
 
 <PageTitle>Index</PageTitle>
 
-<h1>@appSettingsValue</h1>
+@* <h1>@appSettingsValue</h1> *@
+<h1>@appSettings.Value.SomeValue</h1>
 
 @code {
-    string appSettingsValue = ApplicationServicesSettings.MyClassValue.SomeValue;
+    // string appSettingsValue = ApplicationServicesSettings.MyClassValue.SomeValue;
 }
 
 

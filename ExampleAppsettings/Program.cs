@@ -15,7 +15,7 @@ var webAppOptions = new WebApplicationOptions()
 };
 
 var builder = WebApplication.CreateBuilder(webAppOptions);
-builder.Services.Configure<MyClassValue>(builder.Configuration.GetSection(nameof(MyClassValue)));
+builder.Services.Configure<MyClassValue>(builder.Configuration.GetSection("MySettings"));
 //builder.Configuration.GetSection(ApplicationServicesSettings.MySettings).Bind(ApplicationServicesSettings.MyClassValue);
 
 // Add services to the container.
